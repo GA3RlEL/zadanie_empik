@@ -10,6 +10,7 @@ export default defineConfig({
   use: {
     baseURL: "https://www.empik.com/",
     trace: "on-first-retry",
+    headless: false,
   },
 
   projects: [
