@@ -24,7 +24,7 @@ export class SearchListPage extends BasePage {
   }
 
   async sortByPrice(option: "priceAsc" | "priceDesc"): Promise<void> {
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(1000); // Added wait to ensure page stability
     await this.page.waitForSelector(this.selectors.items);
     await this.page.selectOption(this.selectors.sortSelect, option);
   }
@@ -47,6 +47,7 @@ export class SearchListPage extends BasePage {
   }
 
   async getSearchItem(index: number): Promise<Item> {
+    await this.page.waitForTimeout(1000); // Added wait to ensure page stability
     await this.page.waitForSelector(this.selectors.items);
 
     const items = await this.page.locator(this.selectors.items);
@@ -62,6 +63,7 @@ export class SearchListPage extends BasePage {
   }
 
   async addItemToCart(index: number, cartProducts: Item[]): Promise<Item[]> {
+    await this.page.waitForTimeout(1000); // Added wait to ensure page stability
     await this.page.waitForSelector(this.selectors.items);
 
     const items = await this.page.locator(this.selectors.items);
