@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+import { BASE_URL } from "./constants/config";
 
 export default defineConfig({
   testDir: "./tests",
@@ -8,7 +9,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    baseURL: "https://www.empik.com/",
+    baseURL: BASE_URL,
     trace: "on-first-retry",
     headless: false,
   },

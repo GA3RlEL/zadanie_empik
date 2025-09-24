@@ -7,7 +7,7 @@ test("Check page title", async ({ page }) => {
   const homePage = poManager.getHomePage();
 
   // Navigate to the page
-  await page.goto("/");
+  await homePage.goTo();
 
   // Get page title
   const title = await homePage.getPageTitle();
