@@ -12,11 +12,6 @@ export class HomePage extends BasePage {
     super(page);
   }
 
-  async goTo(): Promise<void> {
-    await this.page.goto("/");
-    await this.page.waitForLoadState("networkidle");
-  }
-
   async getPageTitle(): Promise<string> {
     const title = await this.page.title();
     return title;
