@@ -59,37 +59,4 @@ test("Check and display the price difference between the cheapest and the most e
   // Assert that the price difference is greater than 0
   expect(priceDifference).toBeGreaterThan(0);
 });
-
 // !! Test for mobile Test case number 2 cannot be executed on mobile due to the website's structure on mobile devices.
-
-// test("Check and display the price difference between the cheapest and the most expensive book from the latest category - Mobile", async ({
-//   page,
-// }, testInfo) => {
-//   if (testInfo.project.name.includes("Desktop")) {
-//     test.skip(true, "Test only for mobile");
-//   }
-
-//   const poManager = new POManager(page);
-//   const bannerCookies = poManager.getBannerCookies();
-//   const homePage = poManager.getHomePage();
-//   const searchListPage = poManager.getSearchListPage();
-
-//   // Navigate to the home page
-//   await homePage.goTo();
-
-//   // Accept cookies if the banner is visible
-//   await bannerCookies.acceptCookies();
-
-//   // Wait for potential ads to appear
-//   await homePage.waitForSomeTime(5000);
-
-//   // Navigate to the latest books category (Książki > Nowości)
-//   await homePage.goToCategoryMobile("Książki", "Nowości");
-
-//   // Assert that we are /nowosci/ksiazki
-//   await searchListPage.isAt("/nowosci/ksiazki");
-
-//   // Assert that the search list is visible
-//   const isSearchListVisible = await searchListPage.hasSearchList();
-//   await expect(isSearchListVisible).toBeTruthy();
-// });
