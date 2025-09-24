@@ -10,30 +10,30 @@ export default defineConfig({
   use: {
     baseURL: BASE_URL,
     trace: "on-first-retry",
-    headless: false,
+    // headless: false,
   },
 
   projects: [
     {
-      name: "Desktop chromium",
+      name: "Desktop_chromium",
       use: { ...devices["Desktop Chrome"] },
     },
 
     {
-      name: "Desktop firefox",
+      name: "Desktop_firefox",
       use: { ...devices["Desktop Firefox"] },
     },
 
     {
-      name: "Desktop webkit",
+      name: "Desktop_webkit",
       use: { ...devices["Desktop Safari"] },
     },
     {
-      name: "Mobile Android",
+      name: "Mobile_Android",
       use: { ...devices["Pixel 5"] },
     },
     {
-      name: "Mobile iOS",
+      name: "Mobile_iOS",
       use: { ...devices["iPhone 12"] },
     },
   ],

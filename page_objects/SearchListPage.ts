@@ -24,6 +24,7 @@ export class SearchListPage extends BasePage {
   }
 
   async sortByPrice(option: "priceAsc" | "priceDesc"): Promise<void> {
+    await this.page.waitForTimeout(1000);
     await this.page.waitForSelector(this.selectors.items);
     await this.page.selectOption(this.selectors.sortSelect, option);
   }

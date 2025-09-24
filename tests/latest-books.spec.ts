@@ -55,6 +55,9 @@ test("Check and display the price difference between the cheapest and the most e
     `Most expensive book: ${mostExpensiveBook.title} - ${mostExpensiveBook.price} PLN`
   );
   console.log(`Price difference: ${priceDifference.toFixed(2)} PLN`);
+
+  // Assert that the price difference is greater than 0
+  expect(priceDifference).toBeGreaterThan(0);
 });
 
 // !! Test for mobile Test case number 2 cannot be executed on mobile due to the website's structure on mobile devices.
