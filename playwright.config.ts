@@ -4,9 +4,8 @@ import { BASE_URL } from "./constants/config";
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  retries: 2,
+  workers: 3,
   reporter: "html",
   use: {
     baseURL: BASE_URL,
@@ -16,22 +15,26 @@ export default defineConfig({
 
   projects: [
     {
-      name: "chromium",
+      name: "Desktop chromium",
       use: { ...devices["Desktop Chrome"] },
     },
 
     {
-      name: "firefox",
+      name: "Desktop firefox",
       use: { ...devices["Desktop Firefox"] },
     },
 
     {
-      name: "webkit",
+      name: "Desktop webkit",
       use: { ...devices["Desktop Safari"] },
     },
     {
-      name: "Mobile",
+      name: "Mobile Android",
       use: { ...devices["Pixel 5"] },
+    },
+    {
+      name: "Mobile iOS",
+      use: { ...devices["iPhone 12"] },
     },
   ],
 });
