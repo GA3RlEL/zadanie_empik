@@ -1,18 +1,15 @@
 import { Page } from "@playwright/test";
 
 export class BannerCookies {
-  selectors = {
-    banner: ".InfoPage-module_buttonsDesktop__M6SUt",
-    acceptButton: 'button[data-ta="cookie-btn-accept-all"]',
-  };
-
   constructor(private page: Page) {}
 
   async acceptCookies(): Promise<void> {
-    const bannerLocator = this.page.locator(this.selectors.banner);
-    if (await bannerLocator.isVisible()) {
-      const acceptButton = bannerLocator.locator(this.selectors.acceptButton);
-      await acceptButton.click();
+    const button = this.page.getByRole("button", {
+      name: "Zaakceptuj zgody",
+    });
+    await button.waitFor({ state: "visible", timeout: 5000 }).catch(() => null);
+    if (await button.isVisible()) {
+      await button.click();
     }
   }
 }

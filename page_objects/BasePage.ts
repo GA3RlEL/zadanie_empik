@@ -33,12 +33,10 @@ export class BasePage {
 
   async goTo(url?: string): Promise<void> {
     await this.page.goto(url ? url : "/");
-    await this.page.waitForLoadState("networkidle");
   }
 
   async goToCart(): Promise<void> {
-    this.page.click(this.baseSelectors.cartButton),
-      await this.page.waitForLoadState("networkidle");
+    await this.page.click(this.baseSelectors.cartButton);
   }
 
   async addCookie(name: string, value: string): Promise<void> {

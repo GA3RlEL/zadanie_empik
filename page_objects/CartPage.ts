@@ -15,6 +15,7 @@ export class CartPage extends BasePage {
   }
 
   async getCartCount(): Promise<number> {
+    await this.page.waitForSelector(this.selectors.cartItems);
     const cartItems = await this.page.locator(this.selectors.cartItems).all();
     return cartItems.length;
   }

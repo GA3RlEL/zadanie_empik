@@ -20,7 +20,7 @@ test("Check and display the price difference between the cheapest and the most e
   await bannerCookies.acceptCookies();
 
   // Wait for potential ads to appear
-  await homePage.waitForSomeTime(3000);
+  await homePage.waitForSomeTime(5000);
 
   // Navigate to the latest books category (Książki > Nowości)
   await homePage.goToCategory("Książki", "Nowości");
